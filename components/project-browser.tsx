@@ -8,6 +8,21 @@ import { ProjectCardView } from "@/components/project-card"
 import { categories, type CategoryId, type ProjectCard } from "@/lib/content/types"
 import { cn } from "@/lib/utils"
 
+export function ProjectGrid({ projects }: { projects: ProjectCard[] }) {
+  return (
+    <ul className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project, index) => {
+        const wide = index % 5 === 0
+        return (
+          <li key={project.slug} className={wide ? "sm:col-span-2" : undefined}>
+            <ProjectCardView project={project} frame={wide ? "wide" : "tile"} priority={index < 2} />
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
 export function ProjectBrowser({ projects }: { projects: ProjectCard[] }) {
   const params = useSearchParams()
   const requested = params.get("kategori")
@@ -18,7 +33,7 @@ export function ProjectBrowser({ projects }: { projects: ProjectCard[] }) {
 
   return (
     <div>
-      <div className="flex gap-2 overflow-x-auto pb-2" role="toolbar" aria-label="Filtrer prosjekter">
+      <div className="flex gap-6 overflow-x-auto border-b border-border" role="toolbar" aria-label="Filtrer prosjekter">
         <FilterLink href="/prosjekter" active={active === "alle"}>
           Alle
         </FilterLink>
@@ -32,13 +47,9 @@ export function ProjectBrowser({ projects }: { projects: ProjectCard[] }) {
           </FilterLink>
         ))}
       </div>
-      <ul className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((project) => (
-          <li key={project.slug}>
-            <ProjectCardView project={project} />
-          </li>
-        ))}
-      </ul>
+      <div className="mt-10">
+        <ProjectGrid projects={visible} />
+      </div>
     </div>
   )
 }
@@ -58,8 +69,8 @@ function FilterLink({
       scroll={false}
       aria-current={active ? "page" : undefined}
       className={cn(
-        "shrink-0 border px-3 py-2 text-xs font-semibold tracking-[0.12em] uppercase",
-        active ? "border-primary bg-primary text-primary-foreground" : "border-border hover:bg-muted"
+        "-mb-px shrink-0 border-b-2 py-3 text-xs font-semibold tracking-[0.14em] uppercase",
+        active ? "border-lime text-foreground" : "border-transparent text-muted-foreground hover:text-foreground"
       )}
     >
       {children}

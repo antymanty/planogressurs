@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 
-import { firm, method } from "@/lib/content/firm"
+import { LinkedInIcon } from "@/components/linkedin-icon"
+import { MethodList } from "@/components/method-list"
+import { Reveal } from "@/components/reveal"
+import { firm } from "@/lib/content/firm"
 
 export const metadata: Metadata = {
   title: "Om",
@@ -13,7 +16,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16">
       <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="bg-muted">
+        <figure className="bg-muted">
           <Image
             src={firm.leader.portrait.src}
             alt={firm.leader.portrait.alt}
@@ -22,11 +25,23 @@ export default function AboutPage() {
             className="h-auto w-full"
             priority
           />
-        </div>
-        <div>
-          <p className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">Om kontoret</p>
-          <h1 className="mt-3 text-5xl">{firm.leader.name}</h1>
+          <figcaption className="border-t border-foreground/15 px-1 py-3 text-xs tracking-[0.14em] uppercase">
+            {firm.leader.name}
+          </figcaption>
+        </figure>
+        <Reveal>
+          <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Om kontoret</p>
+          <h1 className="mt-3 text-5xl md:text-6xl">{firm.leader.name}</h1>
           <p className="mt-3 text-lg text-muted-foreground">{firm.leader.title}</p>
+          <a
+            href={firm.leader.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 border border-foreground px-3 py-2 text-xs font-semibold tracking-[0.16em] uppercase hover:bg-foreground hover:text-background"
+          >
+            <LinkedInIcon />
+            LinkedIn
+          </a>
           <div className="mt-6 space-y-4 leading-relaxed">
             <p>Ansatt i Plan og Ressurs AS siden 2014, og daglig leder siden 2019.</p>
             <p>
@@ -39,10 +54,10 @@ export default function AboutPage() {
               eksamen fra godkjent høyere profesjonsutdanning.
             </p>
           </div>
-        </div>
+        </Reveal>
       </div>
 
-      <section className="mt-20 grid gap-12 border-t border-border pt-12 lg:grid-cols-2">
+      <section className="mt-20 grid gap-12 border-t border-foreground/15 pt-12 lg:grid-cols-2">
         <div>
           <h2 className="text-3xl">Historie</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
@@ -64,24 +79,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className="mt-16 border-t border-foreground/15 pt-12">
         <h2 className="text-3xl">Arbeidsmåte</h2>
         <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">
           Spacio, Vectorworks og Rhino Lands kan brukes sammen eller hver for seg. Metoden er strukturert og faglig
           forankret.
         </p>
-        <ol className="mt-8 grid gap-6 md:grid-cols-5">
-          {method.map((step, index) => (
-            <li key={step.title} className="border-t border-border pt-4">
-              <p className="text-xs font-semibold tracking-[0.16em] text-primary">0{index + 1}</p>
-              <h3 className="mt-2 text-xl">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.text}</p>
-            </li>
-          ))}
-        </ol>
+        <MethodList />
       </section>
 
-      <section className="mt-16 grid items-center gap-8 border border-border p-6 md:grid-cols-[120px_1fr]">
+      <section className="mt-16 grid items-center gap-8 border border-foreground/15 p-6 md:grid-cols-[120px_1fr]">
         <Image
           src={firm.approvalMark.src}
           alt={firm.approvalMark.alt}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
 import { ContactForm } from "@/components/contact-form"
+import { LinkedInIcon } from "@/components/linkedin-icon"
 import { firm } from "@/lib/content/firm"
 
 export const metadata: Metadata = {
@@ -15,8 +16,8 @@ export default function ContactPage() {
   return (
     <div className="mx-auto grid max-w-6xl gap-14 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
-        <p className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">Kontakt</p>
-        <h1 className="mt-3 text-5xl">Ta kontakt</h1>
+        <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Kontakt</p>
+        <h1 className="mt-3 text-5xl md:text-6xl">Ta kontakt</h1>
         <p className="mt-5 leading-relaxed text-muted-foreground">
           Fortell kort om tomten, planen eller utearealet. Vi svarer fra kontoret på Quben.
         </p>
@@ -62,12 +63,26 @@ export default function ContactPage() {
               </p>
             </dd>
           </div>
+          <div>
+            <dt className="text-muted-foreground">LinkedIn</dt>
+            <dd className="mt-1">
+              <a
+                className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
+                href={firm.leader.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInIcon />
+                {firm.leader.name}
+              </a>
+            </dd>
+          </div>
         </dl>
-        <div className="mt-8 overflow-hidden border border-border">
+        <div className="mt-8 overflow-hidden border border-foreground/15 grayscale">
           <iframe title="Kart til Plan og Ressurs på Quben, Nymoens torg 6 i Kongsberg" src={mapSrc} className="h-72 w-full" />
         </div>
       </div>
-      <div className="border border-border bg-card p-6 md:p-8">
+      <div className="border border-foreground/15 bg-card p-6 md:p-8">
         <h2 className="text-3xl">Skriv til oss</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Skjemaet åpner en ferdig e-post til {firm.email}. Det krever ingen egen konto.

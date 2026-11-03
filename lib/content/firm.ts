@@ -27,6 +27,7 @@ export const firm = {
       height: 1800,
       alt: "Joar-André Halling, daglig leder i Plan og Ressurs",
     },
+    linkedin: "https://www.linkedin.com/in/joar-andre-halling-42439a397",
   },
   logo: {
     src: "/media/logo.png",
@@ -75,33 +76,33 @@ export const method = [
 export const clients = [
   {
     name: "Ålhytta",
-    src: "/media/ff795e9277ce428db80d5a21c0678897.png",
-    width: 330,
-    height: 111,
+    src: "/media/clients/aalhytta.png",
+    width: 1340,
+    height: 172,
   },
   {
     name: "Ag",
-    src: "/media/dd697c1431bc4519b62a38d6d99892fa.png",
-    width: 309,
-    height: 316,
+    src: "/media/clients/ag.png",
+    width: 242,
+    height: 176,
   },
   {
     name: "Dekar Tomteutvikling",
-    src: "/media/be7a7d6a18664d52b9569de6fafd0248.png",
-    width: 177,
-    height: 181,
+    src: "/media/clients/dekar.png",
+    width: 500,
+    height: 129,
   },
   {
     name: "PK Hus",
-    src: "/media/d887c1cef71e4d6fbb680853d32c1103.png",
-    width: 344,
-    height: 305,
+    src: "/media/clients/pk-hus.png",
+    width: 1546,
+    height: 1309,
   },
   {
     name: "Samarbeidspartner",
-    src: "/media/efa82d359263454780a3570acaa11939.png",
-    width: 253,
-    height: 240,
+    src: "/media/clients/samarbeidspartner.png",
+    width: 252,
+    height: 228,
   },
 ] as const
 

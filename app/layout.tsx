@@ -1,21 +1,22 @@
 import type { Metadata } from "next"
-import { Noto_Sans, Playfair_Display, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google"
 
 import "./globals.css"
 import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
+import { SiteShell } from "@/components/site-shell"
 import { ThemeProvider } from "@/components/theme-provider"
 import { firm } from "@/lib/content/firm"
 import { cn } from "@/lib/utils"
 
-const playfairDisplayHeading = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-heading",
-})
-
-const notoSans = Noto_Sans({
+const geist = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
 })
 
 const fontMono = Geist_Mono({
@@ -42,10 +43,10 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/media/2fe8cb56f5a946a4bb8311f15ac2433c.jpg",
-        width: 1262,
-        height: 848,
-        alt: "Fredheim, Kongsberg kulturskole",
+        url: "/media/fb1209cf242443d0b9395c588f7cce56.jpg",
+        width: 1452,
+        height: 720,
+        alt: "Gatemiljø med småhus og gangveier på Gluggeløkka",
       },
     ],
   },
@@ -69,6 +70,7 @@ const jsonLd = {
   areaServed: "NO",
   openingHours: "Mo-Fr 08:00-16:00",
   inLanguage: "nb-NO",
+  sameAs: [firm.leader.linkedin],
 }
 
 export default function RootLayout({
@@ -81,25 +83,18 @@ export default function RootLayout({
       lang="nb"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={cn(
-        "antialiased",
-        fontMono.variable,
-        "font-sans",
-        notoSans.variable,
-        playfairDisplayHeading.variable
-      )}
+      className={cn("antialiased", fontMono.variable, geist.variable, instrumentSerif.variable, "font-sans")}
     >
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <ThemeProvider defaultTheme="light" enableSystem={false}>
           <a
             href="#innhold"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:bg-background focus:px-3 focus:py-2"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[80] focus:bg-background focus:px-3 focus:py-2"
           >
             Hopp til innhold
           </a>
-          <SiteHeader />
-          <main id="innhold">{children}</main>
+          <SiteShell>{children}</SiteShell>
           <SiteFooter />
         </ThemeProvider>
       </body>
