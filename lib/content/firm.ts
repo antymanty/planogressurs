@@ -29,9 +29,9 @@ export const firm = {
     },
   },
   logo: {
-    src: "/media/28445cabf6434165b52aba5d3c3620c9.jpg",
+    src: "/media/logo.png",
     width: 512,
-    height: 389,
+    height: 379,
     alt: "Plan og Ressurs",
   },
   approvalMark: {

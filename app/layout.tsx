@@ -49,9 +49,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  icons: {
-    icon: firm.logo.src,
-  },
 }
 
 const jsonLd = {
