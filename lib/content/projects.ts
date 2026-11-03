@@ -25,8 +25,8 @@ export const projects: Project[] = [
       img(
         "2fe8cb56f5a946a4bb8311f15ac2433c.jpg",
         "Fredheim, Kongsberg kulturskole: eksisterende situasjon og forslag til uteareal",
-        1262,
-        848
+        3786,
+        2544
       ),
       img(
         "fc4aaea5682c4357af141337e53debba.png",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
         1232,
         828
       ),
-      img("951e46ec022c4071b61407f114300676.jpg", "Fredheim, Kongsberg kulturskole", 1262, 848),
+      img("951e46ec022c4071b61407f114300676.jpg", "Fredheim, Kongsberg kulturskole", 3786, 2544),
       img("7b6658e2868f4e11ba34eda982af43e9.jpg", "Uteareal ved Fredheim", 1527, 688),
     ],
   },

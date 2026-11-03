@@ -88,6 +88,8 @@ export default function HomePage() {
         </ul>
       </section>
 
+      <ProofStrip />
+
       {lead ? (
         <section className="border-y border-border">
           <div className="mx-auto flex max-w-6xl items-end justify-between gap-6 px-5 py-10">
@@ -121,47 +123,94 @@ export default function HomePage() {
         </section>
       ) : null}
 
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <Reveal>
-          <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Slik jobber vi</p>
-          <h2 className="mt-3 max-w-2xl text-4xl">En forutsigbar prosess, fra første avklaring til vedtak.</h2>
-        </Reveal>
-        <MethodList />
-      </section>
-
-      <ProofStrip />
-
-      <section className="border-y border-border bg-[oklch(0.985_0_0)] py-16 text-[oklch(0.145_0_0)]">
+      <section className="border-t border-border bg-background py-20 text-foreground">
         <div className="mx-auto max-w-6xl px-5">
-          <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Et utvalg kunder</p>
+          <Reveal>
+            <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Slik jobber vi</p>
+            <h2 className="mt-3 max-w-2xl text-4xl">En forutsigbar prosess, fra første avklaring til vedtak.</h2>
+          </Reveal>
+          <MethodList />
         </div>
-        <ul className="mx-auto mt-8 flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-8 px-5">
-          {clients.map((client) => (
-            <li key={client.name}>
-              <Image
-                src={client.src}
-                alt={client.name}
-                width={client.width}
-                height={client.height}
-                quality={100}
-                className="h-14 w-auto object-contain"
-              />
-            </li>
-          ))}
-        </ul>
       </section>
 
-      <section className="bg-secondary">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl">Har du en tomt, en plan eller et uteareal?</h2>
-            <p className="mt-3 max-w-xl text-muted-foreground">
-              Send en kort beskrivelse, så tar vi en første avklaring av rammer, risiko og muligheter.
-            </p>
+      <section className="relative overflow-hidden bg-ink text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/media/24642679a11048b99fb5a1bbd536de73.jpg"
+            alt="Boligkvartal med grønne tak og felles uteareal"
+            fill
+            sizes="100vw"
+            className="hero-drift object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_32%_38%,oklch(0_0_0/0.9),oklch(0_0_0/0.78)_55%,oklch(0_0_0/0.84)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-[32rem] bg-gradient-to-t from-black from-35% via-black/90 to-transparent" />
+        <div className="relative mx-auto max-w-6xl px-5 py-20">
+          <div className="grid gap-10 md:grid-cols-[1.4fr_0.8fr]">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.16em] text-lime-on-dark uppercase">Første avklaring</p>
+              <h2 className="mt-3 text-4xl text-white md:text-5xl">Har du en tomt, en plan eller et uteareal?</h2>
+              <p className="mt-3 max-w-xl text-white">
+                Send en kort beskrivelse, så tar vi en første avklaring av rammer, risiko og muligheter.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm">
+                {[
+                  "Hvor tomten eller arealet ligger",
+                  "Hva du ønsker å få til",
+                  "Om det finnes en frist eller en planstatus",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-px w-4 shrink-0 bg-lime-on-dark" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="border-t border-white/20 pt-6 md:border-t-0 md:border-l md:pt-0 md:pl-8">
+              <dl className="space-y-4 text-sm">
+                <div>
+                  <dt className="text-xs font-semibold tracking-[0.16em] text-white/80 uppercase">Telefon</dt>
+                  <dd className="mt-1">
+                    <a className="underline-offset-4 hover:underline" href={firm.phoneHref}>
+                      {firm.phone}
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold tracking-[0.16em] text-white/80 uppercase">E-post</dt>
+                  <dd className="mt-1">
+                    <a className="underline-offset-4 hover:underline" href={`mailto:${firm.email}`}>
+                      {firm.email}
+                    </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold tracking-[0.16em] text-white/80 uppercase">Åpningstid</dt>
+                  <dd className="mt-1">{firm.hours}</dd>
+                </div>
+              </dl>
+              <Link href="/kontakt" className={cn(buttonVariants(), "mt-8 bg-white text-ink hover:bg-white/90")}>
+                Kontakt oss
+              </Link>
+            </div>
           </div>
-          <Link href="/kontakt" className={buttonVariants()}>
-            Kontakt oss
-          </Link>
+          <div className="mt-16 border-t border-white/20 pt-10">
+            <p className="text-xs font-semibold tracking-[0.16em] text-lime-on-dark uppercase">Et utvalg kunder</p>
+            <ul className="mt-8 flex flex-wrap items-center gap-x-12 gap-y-8">
+              {clients.map((client) => (
+                <li key={client.name}>
+                  <Image
+                    src={client.src}
+                    alt={client.name}
+                    width={client.width}
+                    height={client.height}
+                    quality={100}
+                    className="h-12 w-auto object-contain md:h-14"
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </>

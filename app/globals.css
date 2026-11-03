@@ -204,6 +204,27 @@
   }
 }
 
+@keyframes method-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes method-flow {
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+@keyframes method-travel {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(420%);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-line {
     animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -239,6 +260,23 @@
     transform: scaleX(0);
     transform-origin: left center;
     animation: line-grow 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .method-stroke {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: method-draw 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--method-delay, 0s);
+  }
+
+  .method-flow {
+    stroke-dasharray: 0.72 0.28;
+    animation: method-flow 2.6s linear infinite;
+    animation-delay: var(--method-delay, 0s);
+  }
+
+  .method-comet {
+    animation: method-travel 3.8s linear infinite;
   }
 
   .marquee-track {

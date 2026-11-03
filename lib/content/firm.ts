@@ -76,7 +76,7 @@ export const method = [
 export const clients = [
   {
     name: "Ålhytta",
-    src: "/media/clients/aalhytta.png",
+    src: "/media/clients/aalhytta-white.png",
     width: 1340,
     height: 172,
   },
