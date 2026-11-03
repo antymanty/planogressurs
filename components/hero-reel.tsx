@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 export const heroFrame = {
-  src: "/media/fb1209cf242443d0b9395c588f7cce56.jpg",
+  src: "/media/hero-gluggelokka.jpg",
   alt: "Gatemiljø med småhus og gangveier på Gluggeløkka",
   place: "Gluggeløkka · Kongsberg",
   label: "01 — Boliger og landskap",
@@ -16,6 +16,7 @@ export function HeroReel() {
         fill
         priority
         sizes="100vw"
+        quality={100}
         className="hero-drift object-cover"
       />
     </div>

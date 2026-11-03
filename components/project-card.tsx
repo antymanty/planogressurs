@@ -31,6 +31,7 @@ export function ProjectCardView({
             alt={project.image.alt}
             fill
             priority={priority}
+            quality={bleed ? 100 : 75}
             sizes={bleed || frame === "wide" ? "100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"}
             className={cn(
               "transition duration-700",

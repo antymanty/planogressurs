@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/media/fb1209cf242443d0b9395c588f7cce56.jpg",
-        width: 1452,
-        height: 720,
+        url: "/media/hero-gluggelokka.jpg",
+        width: 2904,
+        height: 1440,
         alt: "Gatemiljø med småhus og gangveier på Gluggeløkka",
       },
     ],

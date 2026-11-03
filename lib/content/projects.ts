@@ -149,10 +149,10 @@ export const projects: Project[] = [
         565
       ),
       img(
-        "fb1209cf242443d0b9395c588f7cce56.jpg",
+        "hero-gluggelokka.jpg",
         "Gatemiljø med småhus og gangveier på Gluggeløkka",
-        1452,
-        720
+        2904,
+        1440
       ),
       img(
         "2b11a62e4d3e42799e97c3016a8c4848.jpg",

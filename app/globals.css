@@ -166,6 +166,15 @@
   }
 }
 
+@keyframes hero-ken {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.03);
+  }
+}
+
 @keyframes scale-draw {
   to {
     stroke-dashoffset: 0;
@@ -201,7 +210,7 @@
   }
 
   .hero-drift {
-    animation: ken-burns 18s ease-in-out infinite alternate;
+    animation: hero-ken 22s ease-in-out infinite alternate;
   }
 
   .hero-still {

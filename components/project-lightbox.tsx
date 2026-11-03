@@ -89,6 +89,7 @@ export function ProjectGallery({ images, title }: { images: ProjectImage[]; titl
             width={lead.width}
             height={lead.height}
             priority
+            quality={100}
             sizes="100vw"
             className="mx-auto h-auto max-h-[78svh] w-full object-contain"
           />
@@ -98,6 +99,7 @@ export function ProjectGallery({ images, title }: { images: ProjectImage[]; titl
             alt={lead.alt}
             fill
             priority
+            quality={100}
             sizes="100vw"
             className="object-cover transition duration-700 group-hover:scale-[1.03]"
           />
@@ -174,6 +176,7 @@ export function ProjectGallery({ images, title }: { images: ProjectImage[]; titl
               src={current.src}
               alt={current.alt}
               fill
+              quality={100}
               sizes="100vw"
               className="object-contain"
             />

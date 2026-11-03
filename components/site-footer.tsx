@@ -6,7 +6,7 @@ import { firm, nav } from "@/lib/content/firm"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/15 bg-ink text-white">
+    <footer className="border-t-2 border-lime bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="text-2xl tracking-tight text-white">Plan og Ressurs</p>

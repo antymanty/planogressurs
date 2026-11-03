@@ -4,6 +4,7 @@ import Link from "next/link"
 import { heroFrame, HeroReel } from "@/components/hero-reel"
 import { MethodList } from "@/components/method-list"
 import { ProjectCardView } from "@/components/project-card"
+import { ProofStrip } from "@/components/proof-strip"
 import { Reveal } from "@/components/reveal"
 import { ScaleBar } from "@/components/scale-bar"
 import { ServiceMark } from "@/components/line-icons"
@@ -12,13 +13,6 @@ import { cn } from "@/lib/utils"
 import { clients, firm } from "@/lib/content/firm"
 import { getFeaturedProjects, toProjectCards } from "@/lib/content/projects"
 import { services } from "@/lib/content/services"
-
-const proof = [
-  ["MNLA", "Landskapsarkitekt med master fra NMBU"],
-  ["Sentralt godkjent", "Prosjektering og søker, tiltaksklasse 1"],
-  [`Siden ${firm.founded}`, "Fra Vidda Ressurs til by- og stedsutvikling"],
-  ["Quben", "Coworking i Kongsberg, med nettverk å skalere med"],
-] as const
 
 export default function HomePage() {
   const featured = toProjectCards(getFeaturedProjects())
@@ -135,22 +129,9 @@ export default function HomePage() {
         <MethodList />
       </section>
 
-      <section className="border-y border-foreground">
-        <ul className="mx-auto grid max-w-6xl sm:grid-cols-2 lg:grid-cols-4">
-          {proof.map(([title, text], index) => (
-            <li
-              key={title}
-              className="reveal border-b border-foreground/15 px-5 py-8 sm:[&:nth-child(odd)]:border-r lg:border-r lg:border-b-0 lg:last:border-r-0"
-            >
-              <p className="font-mono text-xs tracking-[0.16em] text-lime">0{index + 1}</p>
-              <p className="mt-4 text-2xl tracking-tight">{title}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <ProofStrip />
 
-      <section className="bg-[oklch(0.985_0_0)] py-16 text-[oklch(0.145_0_0)]">
+      <section className="border-y border-border bg-[oklch(0.985_0_0)] py-16 text-[oklch(0.145_0_0)]">
         <div className="mx-auto max-w-6xl px-5">
           <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Et utvalg kunder</p>
         </div>
@@ -170,15 +151,15 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="bg-ink text-white">
+      <section className="bg-secondary">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 py-16 md:flex-row md:items-center">
           <div>
-            <h2 className="text-4xl text-white">Har du en tomt, en plan eller et uteareal?</h2>
-            <p className="mt-3 max-w-xl text-white/75">
+            <h2 className="text-4xl md:text-5xl">Har du en tomt, en plan eller et uteareal?</h2>
+            <p className="mt-3 max-w-xl text-muted-foreground">
               Send en kort beskrivelse, så tar vi en første avklaring av rammer, risiko og muligheter.
             </p>
           </div>
-          <Link href="/kontakt" className={cn(buttonVariants(), "bg-white text-ink hover:bg-white/90")}>
+          <Link href="/kontakt" className={buttonVariants()}>
             Kontakt oss
           </Link>
         </div>
