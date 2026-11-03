@@ -1,0 +1,13 @@
+import type { MetadataRoute } from "next"
+
+import { firm } from "@/lib/content/firm"
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: `${firm.url}/sitemap.xml`,
+  }
+}

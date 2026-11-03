@@ -34,6 +34,10 @@ pnpm-debug.log*
 # vercel
 .vercel
 
+# local browser checks
+.playwright-cli/
+/output/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
