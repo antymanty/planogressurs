@@ -41,8 +41,7 @@ export function CookieNotice() {
           Informasjonskapsler
         </p>
         <p className="mt-2 text-sm leading-relaxed text-white/80">
-          Vi bruker ikke statistikk- eller markedsføringscookies. Nettleseren kan lagre temavalget lokalt. Les mer i
-          personverninnstillingene.
+          Vi bruker ikke statistikk- eller markedsføringscookies. Les mer i personverninnstillingene.
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <button type="button" className={cn(buttonVariants(), "bg-white text-ink hover:bg-white/90")} onClick={dismiss}>

@@ -31,7 +31,7 @@ export const cookieCategories = [
     id: "functional",
     title: "Funksjonelle",
     status: "I bruk",
-    text: "Forbedrer opplevelsen, for eksempel ved å huske visningsvalg. Vi lagrer temavalget (lys/mørk) lokalt i nettleseren. Ingen opplysninger sendes til oss.",
+    text: "Forbedrer opplevelsen, for eksempel ved å huske at cookie-varselet er lukket. Ingen opplysninger sendes til oss.",
   },
   {
     id: "statistics",

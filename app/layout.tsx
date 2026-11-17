@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/media/hero-gluggelokka.jpg",
         width: 2904,
         height: 1440,
-        alt: "Gatemiljø med småhus og gangveier i Henrik Ibsens gate, Kongsberg",
+        alt: "Gatemiljø med småhus og gangveier i Henrik Ibsens Gate, Kongsberg",
       },
     ],
   },

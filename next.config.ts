@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/demo/terrengstudio", destination: "/", permanent: false },
-      { source: "/demo/terrengstudio/:path*", destination: "/:path*", permanent: false },
       { source: "/about", destination: "/kontakt", permanent: true },
       { source: "/copy-of-kontakt", destination: "/om", permanent: true },
       { source: "/publications", destination: "/tjenester", permanent: true },

@@ -126,10 +126,10 @@ export const projects: Project[] = [
   },
   {
     slug: "gluggelokka-boliger",
-    title: "Henrik Ibsens gate boliger",
+    title: "Henrik Ibsens Gate boliger",
     category: "boliger",
     client: "Soltun Bolig",
-    location: "Henrik Ibsens gate, Kongsberg kommune",
+    location: "Henrik Ibsens Gate, Kongsberg kommune",
     type: "Detaljregulering",
     year: "2023",
     featured: true,
@@ -144,13 +144,13 @@ export const projects: Project[] = [
     images: [
       img(
         "301746fd23a44b128798159cb0c66d26.png",
-        "Henrik Ibsens gate sett mot Numedalslågen, med blokker og småhus",
+        "Henrik Ibsens Gate sett mot Numedalslågen, med blokker og småhus",
         1012,
         565
       ),
       img(
         "hero-gluggelokka.jpg",
-        "Gatemiljø med småhus og gangveier i Henrik Ibsens gate, Kongsberg",
+        "Gatemiljø med småhus og gangveier i Henrik Ibsens Gate, Kongsberg",
         2904,
         1440
       ),

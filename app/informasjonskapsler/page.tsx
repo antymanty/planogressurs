@@ -52,12 +52,6 @@ export default function CookiesPage() {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-foreground/10">
-                <td className="py-2 pr-4 font-mono text-xs text-foreground">theme</td>
-                <td className="py-2 pr-4">Lokal lagring</td>
-                <td className="py-2 pr-4">Husker lys eller mørk visning</td>
-                <td className="py-2">Til du sletter den</td>
-              </tr>
               <tr>
                 <td className="py-2 pr-4 font-mono text-xs text-foreground">cookie-notice</td>
                 <td className="py-2 pr-4">Lokal lagring</td>
@@ -71,8 +65,8 @@ export default function CookiesPage() {
 
       <LegalSection title="Slik endrer du innstillinger">
         <p>
-          Du kan slette lokal lagring og cookies i nettleseren din. Temavalget nullstilles da til lys visning. Det
-          finnes ingen analyse- eller markedsføringsvalg å slå av, fordi slike verktøy ikke er lagt inn.
+          Du kan slette lokal lagring og cookies i nettleseren din. Det finnes ingen analyse- eller
+          markedsføringsvalg å slå av, fordi slike verktøy ikke er lagt inn.
         </p>
         <p>
           Behandling av personopplysninger utenom cookies er beskrevet i{" "}
