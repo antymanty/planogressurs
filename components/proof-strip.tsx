@@ -10,9 +10,9 @@ const facts = [
     mark: <LandscapeMark />,
   },
   {
-    title: "Demonstrasjon",
-    text: "Ikke en ekte godkjenning eller en ekte bedrift",
-    mark: <p className="text-sm tracking-[0.14em] uppercase">Fiktiv</p>,
+    title: "Sentralt godkjent",
+    text: "Prosjektering av veg, utearealer og landskapsutforming, og søker, i tiltaksklasse 1",
+    mark: <p className="text-sm tracking-[0.14em] uppercase">SAK10</p>,
   },
   {
     title: `Siden ${firm.founded}`,

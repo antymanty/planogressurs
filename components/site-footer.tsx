@@ -2,15 +2,16 @@ import Link from "next/link"
 
 import { LinkedInIcon } from "@/components/linkedin-icon"
 import { firm, nav } from "@/lib/content/firm"
+import { legalNav } from "@/lib/content/legal"
 
 export function SiteFooter() {
   return (
     <footer className="border-t-2 border-lime bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="text-2xl tracking-tight text-white">Terrengstudio</p>
+          <p className="text-2xl tracking-tight text-white">{firm.shortName}</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
-            Arealplanlegging, landskapsarkitektur og eiendomsutvikling. En fiktiv demonstrasjon.
+            Arealplanlegging, landskapsarkitektur og eiendomsutvikling.
           </p>
           {firm.leader.linkedin ? (
           <a
@@ -61,9 +62,17 @@ export function SiteFooter() {
       <div className="border-t border-white/15">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            {firm.name} · fiktiv demonstrasjon
+            {firm.name} · org.nr. {firm.orgNumber}
           </p>
-          <p>Ikke en ekte bedrift</p>
+          <ul className="flex flex-wrap gap-x-4 gap-y-2">
+            {legalNav.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-white/70 hover:text-white">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

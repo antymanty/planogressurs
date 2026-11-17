@@ -31,8 +31,8 @@ export default function HomePage() {
               <span className="hero-line block">Vi forener bebyggelse og landskap.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85">
-              Terrengstudio er det personlige alternativet for regulering, landskapsarkitektur og eiendomsutvikling.
-              Fra idé til vedtak. En fiktiv demonstrasjon.
+              Plan og Ressurs er det personlige alternativet for regulering, landskapsarkitektur og eiendomsutvikling.
+              Fra idé til vedtak.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/prosjekter" className={cn(buttonVariants(), "bg-white text-ink hover:bg-white/90")}>

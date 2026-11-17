@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 
+import Link from "next/link"
+
 import { buttonVariants } from "@/components/ui/button"
 import { firm, inquiryTypes } from "@/lib/content/firm"
 
@@ -19,6 +21,7 @@ export function ContactForm() {
     const phone = String(data.get("telefon") ?? "").trim()
     const kind = String(data.get("type") ?? "").trim()
     const message = String(data.get("melding") ?? "").trim()
+    const consent = data.get("samtykke") === "on"
 
     if (name.length < 2) {
       setStatus("error")
@@ -38,6 +41,11 @@ export function ContactForm() {
     if (message.length < 10) {
       setStatus("error")
       setError("Skriv en kort melding om oppdraget.")
+      return
+    }
+    if (!consent) {
+      setStatus("error")
+      setError("Bekreft at vi kan bruke opplysningene til å besvare henvendelsen.")
       return
     }
 
@@ -89,6 +97,21 @@ export function ContactForm() {
           className="w-full border border-input bg-background px-3 py-2 text-sm"
         />
       </div>
+      <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+        <input
+          type="checkbox"
+          name="samtykke"
+          required
+          className="mt-1 size-4 shrink-0 border border-input accent-foreground"
+        />
+        <span>
+          Jeg samtykker til at opplysningene brukes til å besvare henvendelsen. Se{" "}
+          <Link href="/personvern" className="text-foreground underline decoration-lime decoration-2 underline-offset-4">
+            personvernerklæringen
+          </Link>
+          .
+        </span>
+      </label>
       {status === "error" ? (
         <p role="alert" className="text-sm text-destructive">
           {error}

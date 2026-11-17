@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google"
 
 import "./globals.css"
+import { CookieNotice } from "@/components/cookie-notice"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteShell } from "@/components/site-shell"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -25,13 +26,13 @@ const fontMono = Geist_Mono({
 })
 
 const description =
-  "Terrengstudio er et rådgivningskontor for areal og landskap. Vi arbeider med arealplanlegging, landskapsarkitektur og eiendomsutvikling, fra idé til vedtak."
+  "Plan og Ressurs AS er et rådgivningskontor for areal og landskap. Vi arbeider med arealplanlegging, landskapsarkitektur og eiendomsutvikling, fra idé til vedtak."
 
 export const metadata: Metadata = {
   metadataBase: new URL(firm.url),
   title: {
-    default: "Terrengstudio — arealplanlegging og landskapsarkitektur",
-    template: "%s · Terrengstudio",
+    default: "Plan og Ressurs — arealplanlegging og landskapsarkitektur",
+    template: `%s · ${firm.shortName}`,
   },
   description,
   applicationName: firm.shortName,
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nb_NO",
     siteName: firm.shortName,
-    title: "Terrengstudio — arealplanlegging og landskapsarkitektur",
+    title: "Plan og Ressurs — arealplanlegging og landskapsarkitektur",
     description,
     images: [
       {
@@ -60,6 +61,7 @@ const jsonLd = {
   image: `${firm.url}/media/hero-gluggelokka.jpg`,
   
   email: firm.email,
+  telephone: firm.phone,
   address: {
     "@type": "PostalAddress",
     streetAddress: `${firm.street} (${firm.place})`,
@@ -96,7 +98,7 @@ export default function RootLayout({
           </a>
           <SiteShell>{children}</SiteShell>
           <SiteFooter />
-          <a href="https://stjernestudio.no/referanser" target="_top" style={{position:'fixed',zIndex:80,left:16,bottom:16,background:'#111216',color:'#fff',padding:'10px 14px',borderRadius:999,fontSize:13,textDecoration:'none'}}>← Studio</a>
+          <CookieNotice />
         </ThemeProvider>
       </body>
     </html>

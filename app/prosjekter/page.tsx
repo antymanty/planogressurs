@@ -7,7 +7,7 @@ import { toProjectCards } from "@/lib/content/projects"
 export const metadata: Metadata = {
   title: "Prosjekter",
   description:
-    "Utvalg av reguleringsplaner, uterom, boliger, fritidsbebyggelse, næring og hagedesign fra Terrengstudio.",
+    "Utvalg av reguleringsplaner, uterom, boliger, fritidsbebyggelse, næring og hagedesign fra Plan og Ressurs.",
 }
 
 export default function ProjectsPage() {

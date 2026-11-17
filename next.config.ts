@@ -1,18 +1,14 @@
 import type { NextConfig } from "next"
 
-const basePath = "/demo/terrengstudio"
-
 const nextConfig: NextConfig = {
-  basePath,
   allowedDevOrigins: ["127.0.0.1"],
   images: {
-    loader: "custom",
-    loaderFile: "./image-loader.js",
     qualities: [75, 100],
   },
   async redirects() {
     return [
-      { source: "/", destination: basePath, permanent: false, basePath: false },
+      { source: "/demo/terrengstudio", destination: "/", permanent: false },
+      { source: "/demo/terrengstudio/:path*", destination: "/:path*", permanent: false },
       { source: "/about", destination: "/kontakt", permanent: true },
       { source: "/copy-of-kontakt", destination: "/om", permanent: true },
       { source: "/publications", destination: "/tjenester", permanent: true },

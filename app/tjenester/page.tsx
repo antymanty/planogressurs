@@ -23,7 +23,7 @@ export default function ServicesPage() {
         <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Tjenester</p>
         <h1 className="mt-3 max-w-3xl text-5xl md:text-6xl">Fra tomt og konsept til regulert og prosjektert anlegg.</h1>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          Terrengstudio tilbyr tjenester innen arealplanlegging, landskapsarkitektur og eiendomsutvikling. Det gjelder
+          Plan og Ressurs tilbyr tjenester innen arealplanlegging, landskapsarkitektur og eiendomsutvikling. Det gjelder
           detaljreguleringsplaner, urbanisme og stedsutvikling, fra idé til ferdig produkt. Kundene er i hovedsak
           profesjonelle aktører innen eiendom, bygg og anlegg, ved siden av private og kommuner.
         </p>

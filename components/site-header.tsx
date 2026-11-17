@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 
-import { nav } from "@/lib/content/firm"
+import { firm, nav } from "@/lib/content/firm"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -51,7 +51,7 @@ export function SiteHeader() {
     >
       <div className="relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5">
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
-          <span className="text-lg tracking-tight">Terrengstudio</span>
+          <span className="text-lg tracking-tight">{firm.shortName}</span>
         </Link>
         <nav aria-label="Hovedmeny" className="hidden items-center gap-7 md:flex">
           {nav.map((item) => {
@@ -114,7 +114,7 @@ export function SiteHeader() {
             })}
           </ul>
           <p className="flex items-center justify-between gap-4 px-6 py-8 text-xs tracking-[0.18em] text-white/55 uppercase">
-            <span>Demonstrasjon</span>
+            <span>{firm.city}</span>
           </p>
         </nav>
       ) : null}
