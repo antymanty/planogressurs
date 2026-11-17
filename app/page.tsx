@@ -31,8 +31,8 @@ export default function HomePage() {
               <span className="hero-line block">Vi forener bebyggelse og landskap.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/85">
-              Plan og Ressurs er det personlige alternativet for regulering, landskapsarkitektur og eiendomsutvikling.
-              Fra idé til vedtak, med kontor på Quben i Kongsberg.
+              Terrengstudio er det personlige alternativet for regulering, landskapsarkitektur og eiendomsutvikling.
+              Fra idé til vedtak. En fiktiv demonstrasjon.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/prosjekter" className={cn(buttonVariants(), "bg-white text-ink hover:bg-white/90")}>
@@ -194,6 +194,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+          {clients.length > 0 ? (
           <div className="mt-16 border-t border-white/20 pt-10">
             <p className="text-xs font-semibold tracking-[0.16em] text-lime-on-dark uppercase">Et utvalg kunder</p>
             <ul className="mt-8 flex flex-wrap items-center gap-x-12 gap-y-8">
@@ -211,6 +212,7 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
+          ) : null}
         </div>
       </section>
     </>

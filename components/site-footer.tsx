@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { LinkedInIcon } from "@/components/linkedin-icon"
@@ -9,11 +8,11 @@ export function SiteFooter() {
     <footer className="border-t-2 border-lime bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="text-2xl tracking-tight text-white">Plan og Ressurs</p>
+          <p className="text-2xl tracking-tight text-white">Terrengstudio</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
-            Arealplanlegging, landskapsarkitektur og eiendomsutvikling. Det personlige alternativet, med kontor på Quben
-            i Kongsberg.
+            Arealplanlegging, landskapsarkitektur og eiendomsutvikling. En fiktiv demonstrasjon.
           </p>
+          {firm.leader.linkedin ? (
           <a
             href={firm.leader.linkedin}
             target="_blank"
@@ -23,6 +22,7 @@ export function SiteFooter() {
             <LinkedInIcon />
             LinkedIn
           </a>
+          ) : null}
         </div>
         <div>
           <p className="text-xs font-semibold tracking-[0.18em] text-white/50 uppercase">Kontakt</p>
@@ -61,12 +61,9 @@ export function SiteFooter() {
       <div className="border-t border-white/15">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            {firm.name} · org.nr. {firm.orgNumber}
+            {firm.name} · fiktiv demonstrasjon
           </p>
-          <p className="inline-flex items-center gap-3">
-            <Image src={firm.approvalMark.src} alt="" width={28} height={28} className="size-7" />
-            <span>Sentralt godkjent, tiltaksklasse 1</span>
-          </p>
+          <p>Ikke en ekte bedrift</p>
         </div>
       </div>
     </footer>

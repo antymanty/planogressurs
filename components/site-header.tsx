@@ -1,12 +1,11 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 
-import { firm, nav } from "@/lib/content/firm"
+import { nav } from "@/lib/content/firm"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -52,14 +51,7 @@ export function SiteHeader() {
     >
       <div className="relative z-50 mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5">
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
-          <Image
-            src={firm.logo.src}
-            alt={firm.logo.alt}
-            width={firm.logo.width}
-            height={firm.logo.height}
-            priority
-            className="h-9 w-auto brightness-0 invert"
-          />
+          <span className="text-lg tracking-tight">Terrengstudio</span>
         </Link>
         <nav aria-label="Hovedmeny" className="hidden items-center gap-7 md:flex">
           {nav.map((item) => {
@@ -122,15 +114,7 @@ export function SiteHeader() {
             })}
           </ul>
           <p className="flex items-center justify-between gap-4 px-6 py-8 text-xs tracking-[0.18em] text-white/55 uppercase">
-            <span>Kongsberg · siden {firm.founded}</span>
-            <a
-              href={firm.leader.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-white"
-            >
-              LinkedIn
-            </a>
+            <span>Demonstrasjon</span>
           </p>
         </nav>
       ) : null}

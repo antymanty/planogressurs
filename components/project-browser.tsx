@@ -33,7 +33,7 @@ export function ProjectBrowser({ projects }: { projects: ProjectCard[] }) {
 
   return (
     <div>
-      <div className="flex gap-6 overflow-x-auto border-b border-border" role="toolbar" aria-label="Filtrer prosjekter">
+      <div className="flex gap-6 overflow-x-auto overflow-y-hidden border-b border-border" role="toolbar" aria-label="Filtrer prosjekter">
         <FilterLink href="/prosjekter" active={active === "alle"}>
           Alle
         </FilterLink>

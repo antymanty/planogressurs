@@ -9,7 +9,7 @@ export const projects: Project[] = [
     slug: "fredheim-kongsberg-kulturskole",
     title: "Fredheim – Kongsberg kulturskole",
     category: "offentlig-uterom",
-    client: "AG Entreprenør AS",
+    client: "Fjelltun Utvikling",
     location: "Fredheim, Kongsberg kommune",
     type: "Endring av områdereguleringsplan og prosjektering",
     year: "2023",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     summary:
       "Detaljering av deler av sentrumsgaten og arealet foran kommunehuset, med sitteplasser, trapp og beplantning.",
     body: [
-      "Plan og Ressurs har bistått Nore og Uvdal kommune med å detaljere deler av sentrumsgaten og området foran kommunehuset.",
+      "Terrengstudio har bistått Nore og Uvdal kommune med å detaljere deler av sentrumsgaten og området foran kommunehuset.",
       "Material- og plantebeskrivelse er vektlagt. Utearealet har fått integrerte sitteplasser, trapp og soner med beplantning.",
     ],
     images: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     summary:
       "Prosjektering av uteareal, veg og parkering for Modum kommunes største barnehage, med innledende regulering.",
     body: [
-      "Plan og Ressurs har prosjektert utearealene i Modum kommunes største barnehage, inkludert veg- og parkeringsarealer. Lokalisering av bygningen ble funnet i samråd med arkitekt.",
+      "Terrengstudio har prosjektert utearealene i Modum kommunes største barnehage, inkludert veg- og parkeringsarealer. Lokalisering av bygningen ble funnet i samråd med arkitekt.",
       "I prosjektet inngår også en innledende detaljregulering med konsekvensutredning, inkludert planlegging av 15 eneboligtomter.",
     ],
     images: [
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     summary: "Nye leke- og uteoppholdsarealer, med sittegrupper og pergola.",
     body: [
       "Arbeidet har bestått av detaljprosjektering av nye leke- og uteoppholdsarealer.",
-      "Plan og Ressurs hadde også ansvaret for nye soner for sittegrupper og pergola med takoverbygg.",
+      "Terrengstudio hadde også ansvaret for nye soner for sittegrupper og pergola med takoverbygg.",
     ],
     images: [
       img("32113f7dc82248258fcf7fac8bba982f.png", "Rødberg skole", 601, 847),
@@ -126,10 +126,10 @@ export const projects: Project[] = [
   },
   {
     slug: "gluggelokka-boliger",
-    title: "Gluggeløkka boliger",
+    title: "Henrik Ibsens gate boliger",
     category: "boliger",
-    client: "Trysilhus Areal AS",
-    location: "Gluggeløkka / Steglet, Kongsberg kommune",
+    client: "Soltun Bolig",
+    location: "Henrik Ibsens gate, Kongsberg kommune",
     type: "Detaljregulering",
     year: "2023",
     featured: true,
@@ -137,20 +137,20 @@ export const projects: Project[] = [
     summary:
       "Nytt boligområde med 118 boenheter: blokkleiligheter og konsentrert småhusbebyggelse ved Numedalslågen.",
     body: [
-      "Hovedformålet var å planlegge et nytt boligområde med konsentrert småhusbebyggelse og mindre blokkbebyggelse for Trysilhus Areal AS, på eiendom gnr. 7398, bnr. 1. Reguleringsplanen åpnet for totalt 118 boenheter: 48 blokkleiligheter fordelt på 4 etasjer og 70 leiligheter i konsentrert småhusbebyggelse.",
+      "Hovedformålet var å planlegge et nytt boligområde med konsentrert småhusbebyggelse og mindre blokkbebyggelse for Soltun Bolig, på eiendom gnr. 7398, bnr. 1. Reguleringsplanen åpnet for totalt 118 boenheter: 48 blokkleiligheter fordelt på 4 etasjer og 70 leiligheter i konsentrert småhusbebyggelse.",
       "I planarbeidet ble det lagt til rette for uterom, leke- og grøntarealer, og bevaring av deler av kulturhistorien på området. Nærturer er koblet til eksisterende stier langs Numedalslågen og de nærmeste boligområdene.",
       "Trafikksikker forbindelse til veger og gangarealer har vært et viktig tema, inkludert nytt fortau til nærmeste bussholdeplass og gangforbindelser til Granbakken i nord og Veungsdalen i sør.",
     ],
     images: [
       img(
         "301746fd23a44b128798159cb0c66d26.png",
-        "Gluggeløkka sett mot Numedalslågen, med blokker og småhus",
+        "Henrik Ibsens gate sett mot Numedalslågen, med blokker og småhus",
         1012,
         565
       ),
       img(
         "hero-gluggelokka.jpg",
-        "Gatemiljø med småhus og gangveier på Gluggeløkka",
+        "Gatemiljø med småhus og gangveier i Henrik Ibsens gate, Kongsberg",
         2904,
         1440
       ),
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     slug: "bk-banen",
     title: "BK-banen",
     category: "boliger",
-    client: "PK Hus AS",
+    client: "Havli Hus",
     location: "BK-banen / Raumyr, Kongsberg kommune",
     type: "Konseptutvikling og detaljregulering",
     year: "2026",
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     summary:
       "Ny boligbebyggelse med inntil 254 boenheter, tjenesteyting og lokalnæring, og et grønt gatemiljø.",
     body: [
-      "Hovedformålet er å etablere ny boligbebyggelse for konsentrert småhusbebyggelse og blokkbebyggelse for PK Hus AS, hjemmelshaver på eiendommene gnr./bnr. 8062/10 og 8062/19. Illustrasjonsplanen viser opptil 254 boenheter.",
+      "Hovedformålet er å etablere ny boligbebyggelse for konsentrert småhusbebyggelse og blokkbebyggelse for Havli Hus, hjemmelshaver på eiendommene gnr./bnr. 8062/10 og 8062/19. Illustrasjonsplanen viser opptil 254 boenheter.",
       "Planen legger også opp til offentlig og privat tjenesteyting, og lokalnæring på deler av arealet. Deler av tilgrensende eiendommer, leke- og friområder og vegarealer er med i planarbeidet.",
       "Bestemmelsene skal sikre gode uterom og grønnstruktur, med blågrønne løsninger. Grønt gatemiljø og uteoppholdsarealer ved Withs gate og Olavs gate er vektlagt, og kantparkering i Withs gate får parktrær. Dagens lekeplass i planområdets sørlige hjørne oppgraderes. Gang- og sykkelveger og fortau reguleres rundt kvartalet.",
     ],
@@ -233,7 +233,7 @@ export const projects: Project[] = [
     slug: "diple-kollen",
     title: "Diple, Kollentoppen og Østre Kollen",
     category: "fritidsboliger",
-    client: "Kollen Gaustatoppen AS",
+    client: "Høyfjellstun",
     location: "Gaustablikk, Tinn kommune",
     type: "Detaljprosjektering og reguleringsendring",
     year: "2024",
@@ -294,7 +294,7 @@ export const projects: Project[] = [
     slug: "fjellsnaret-3",
     title: "Fjellsnaret 3",
     category: "fritidsboliger",
-    client: "Fjellsnaret AS",
+    client: "Nordlia Hytter",
     location: "Fjellsnaret / Uvdal, Nore og Uvdal kommune",
     type: "Detaljregulering",
     year: "2021",
@@ -336,7 +336,7 @@ export const projects: Project[] = [
     slug: "bjorsate-masseuttak",
     title: "Bjorsåte masseuttak",
     category: "naering",
-    client: "Fulsaas Maskin AS",
+    client: "Bergmo Maskin",
     location: "Veggli, Rollag kommune",
     type: "Konseptutvikling og detaljregulering",
     year: "2024",
@@ -357,7 +357,7 @@ export const projects: Project[] = [
     slug: "heggenveien-30",
     title: "Heggenveien 30",
     category: "naering",
-    client: "Hæhre Entreprenør AS",
+    client: "Stranda Entreprenør",
     location: "Vikersund, Modum kommune",
     type: "Detaljregulering",
     year: "2019",
@@ -376,7 +376,7 @@ export const projects: Project[] = [
     slug: "vikersund-naeringspark",
     title: "Vikersund næringspark",
     category: "naering",
-    client: "Tveføtrud Eiendom AS",
+    client: "Elvebredden Eiendom",
     location: "Vikersund / Sysle, Modum kommune",
     type: "Detaljregulering og detaljprosjektering",
     year: "2024",
@@ -384,7 +384,7 @@ export const projects: Project[] = [
     summary: "Utvidelse for næring, tjenesteyting, industri og lager, med prosjektering senere i løpet.",
     body: [
       "Formålet var å legge til rette for utbygging med næring og tjenesteyting, og industri og lager. Planen er en utvidelse av eksisterende reguleringsplan.",
-      "Plan og Ressurs har også bistått med detaljprosjektering og søknader senere i prosessen.",
+      "Terrengstudio har også bistått med detaljprosjektering og søknader senere i prosessen.",
     ],
     images: [
       img(
@@ -402,7 +402,7 @@ export const projects: Project[] = [
     slug: "hvittingfoss-sentrum-nord",
     title: "Hvittingfoss sentrum nord",
     category: "kombinerte",
-    client: "E&Ø Dagligvare AS",
+    client: "Torget Dagligvare",
     location: "Hvittingfoss, Kongsberg kommune",
     type: "Konseptutvikling og detaljregulering",
     year: "2021",
@@ -423,7 +423,7 @@ export const projects: Project[] = [
     slug: "numedalsveien-76",
     title: "Numedalsveien 76",
     category: "kombinerte",
-    client: "Numedalsveien 76 AS",
+    client: "Bryggekvartalet",
     location: "Kongsberghallen / Kiwi, Kongsberg kommune",
     type: "Konseptutvikling og detaljregulering",
     year: "Under utarbeidelse",
@@ -465,7 +465,7 @@ export const projects: Project[] = [
     body: [
       "Området vest for Stalsberg skole på Geithus ble regulert til blant annet frittliggende småhusbebyggelse, offentlig og privat tjenesteyting for barnehage, og veganlegg.",
       "De viktigste oppgavene var lokalisering av barnehagen og infrastrukturen: hvor atkomstvegene skulle ligge, og hvilke konsekvenser det fikk for området. Det ble også vurdert om gang- og sykkelveg skulle knytte fremtidig barnehage og Stalsberg skole sammen.",
-      "Oppdraget var en del av prosjekteringen av Skredsvikmoen barnehage, der Plan og Ressurs også var ansvarlig for lek- og utomhusarealer, parkering og veganlegg.",
+      "Oppdraget var en del av prosjekteringen av Skredsvikmoen barnehage, der Terrengstudio også var ansvarlig for lek- og utomhusarealer, parkering og veganlegg.",
     ],
     images: [
       img("9cf44ef571c64b4c86f9c53699a708ee.png", "Skredsvikmoen, Geithus", 1040, 808),
@@ -505,7 +505,7 @@ export const projects: Project[] = [
     summary:
       "Digitalisering av reguleringsplan for hytter, skianlegg og næring, og 3D-modell av terreng og løype.",
     body: [
-      "Plan og Ressurs har bistått med digitalisering av detaljreguleringsplanen, som omfatter hytter, skianlegg og næring.",
+      "Terrengstudio har bistått med digitalisering av detaljreguleringsplanen, som omfatter hytter, skianlegg og næring.",
       "Vi har også detaljprosjektert terreng og skianlegg som en 3D-modell, egnet til maskinstyring i anleggsfasen. Anlegget er asfaltert og kan brukes som rulleskiløype om sommeren. Det er en del av utviklingen av Vegglifjell som hytte-, turist- og rekreasjonsområde.",
     ],
     images: [
@@ -526,7 +526,7 @@ export const projects: Project[] = [
     summary:
       "Overtakelse av kommunedelplanen midt i løpet, med kart, innspill, innsigelser og konsekvensutredning.",
     body: [
-      "Plan og Ressurs overtok arbeidet fra en annen plankonsulent midt i prosessen. På grunn av en rekke innsigelser fra myndighetene ble planforslaget revidert flere ganger.",
+      "Terrengstudio overtok arbeidet fra en annen plankonsulent midt i prosessen. På grunn av en rekke innsigelser fra myndighetene ble planforslaget revidert flere ganger.",
       "Bistanden omfattet kartarbeid, digitalisering, vurdering og sortering av innspill, konsekvensutredninger og det øvrige konsulentarbeidet frem til ferdig kommunedelplan.",
     ],
     images: [
@@ -546,7 +546,7 @@ export const projects: Project[] = [
     summary:
       "Hageplaner fra skisse til ferdig plan, også med mur, trapp, overvann og 3D-visualisering.",
     body: [
-      "Plan og Ressurs har laget en rekke utomhus- og hageplaner, og bistått med hagedesign for mange kunder. Noen oppdrag er mer tekniske, for eksempel overvannstiltak eller prosjektering av mur og trapp.",
+      "Terrengstudio har laget en rekke utomhus- og hageplaner, og bistått med hagedesign for mange kunder. Noen oppdrag er mer tekniske, for eksempel overvannstiltak eller prosjektering av mur og trapp.",
       "Arbeidet bygger på fagkunnskap om planter og arkitektur, og skal styrke eiendommens verdi med varig kvalitet. Visualisering i 3D brukes for at kunden skal forstå prosjektet. Landskapsarkitekten har i tillegg en særlig interesse for historiske og kulturelle hager, anlegg og parker.",
     ],
     images: [

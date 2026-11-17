@@ -1,4 +1,3 @@
-import Image from "next/image"
 import type { ReactNode } from "react"
 
 import { firm } from "@/lib/content/firm"
@@ -11,26 +10,18 @@ const facts = [
     mark: <LandscapeMark />,
   },
   {
-    title: "Sentralt godkjent",
-    text: "Prosjektering og søker, tiltaksklasse 1",
-    mark: (
-      <Image
-        src="/media/sentralt-godkjent.png"
-        alt=""
-        width={313}
-        height={336}
-        className="h-16 w-auto"
-      />
-    ),
+    title: "Demonstrasjon",
+    text: "Ikke en ekte godkjenning eller en ekte bedrift",
+    mark: <p className="text-sm tracking-[0.14em] uppercase">Fiktiv</p>,
   },
   {
     title: `Siden ${firm.founded}`,
-    text: "Fra Vidda Ressurs til by- og stedsutvikling",
+    text: "Fra idé til en plan som kan bygges",
     mark: <p className="font-display text-5xl leading-none tracking-tight text-lime">{firm.founded}</p>,
   },
   {
-    title: "Quben",
-    text: "Coworking i Kongsberg, med nettverk å skalere med",
+    title: "Kontor",
+    text: "Et kontor med rom til å skalere oppdraget",
     mark: <PlaceMark />,
   },
 ] as const

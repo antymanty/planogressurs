@@ -1,25 +1,22 @@
 import type { Metadata } from "next"
 
 import { ContactForm } from "@/components/contact-form"
-import { LinkedInIcon } from "@/components/linkedin-icon"
 import { firm } from "@/lib/content/firm"
 
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontakt Plan og Ressurs AS på Quben, Nymoens torg 6, 3611 Kongsberg. Telefon, e-post og besøk man–fre 08–16.",
+    "Kontakt Terrengstudio. Dette er en fiktiv demonstrasjon.",
 }
 
 export default function ContactPage() {
-  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${firm.map.lng - 0.012}%2C${firm.map.lat - 0.006}%2C${firm.map.lng + 0.012}%2C${firm.map.lat + 0.006}&layer=mapnik&marker=${firm.map.lat}%2C${firm.map.lng}`
-
   return (
     <div className="mx-auto grid max-w-6xl gap-14 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
         <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Kontakt</p>
         <h1 className="mt-3 text-5xl md:text-6xl">Ta kontakt</h1>
         <p className="mt-5 leading-relaxed text-muted-foreground">
-          Fortell kort om tomten, planen eller utearealet. Vi svarer fra kontoret på Quben.
+          Fortell kort om tomten, planen eller utearealet. Skjemaet er en del av demonstrasjonen.
         </p>
         <dl className="mt-8 space-y-5 text-sm">
           <div>
@@ -63,24 +60,7 @@ export default function ContactPage() {
               </p>
             </dd>
           </div>
-          <div>
-            <dt className="text-muted-foreground">LinkedIn</dt>
-            <dd className="mt-1">
-              <a
-                className="inline-flex items-center gap-2 underline-offset-4 hover:underline"
-                href={firm.leader.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LinkedInIcon />
-                {firm.leader.name}
-              </a>
-            </dd>
-          </div>
         </dl>
-        <div className="mt-8 overflow-hidden border border-foreground/15 grayscale">
-          <iframe title="Kart til Plan og Ressurs på Quben, Nymoens torg 6 i Kongsberg" src={mapSrc} className="h-72 w-full" />
-        </div>
       </div>
       <div className="border border-foreground/15 bg-card p-6 md:p-8">
         <h2 className="text-3xl">Skriv til oss</h2>

@@ -2,8 +2,8 @@ import Image from "next/image"
 
 export const heroFrame = {
   src: "/media/hero-gluggelokka.jpg",
-  alt: "Gatemiljø med småhus og gangveier på Gluggeløkka",
-  place: "Gluggeløkka · Kongsberg",
+  alt: "Gatemiljø med småhus og gangveier i Henrik Ibsens gate, Kongsberg",
+  place: "Henrik Ibsens gate · Kongsberg",
   label: "01 — Boliger og landskap",
 } as const
 

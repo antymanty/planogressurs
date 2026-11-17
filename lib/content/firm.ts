@@ -1,39 +1,39 @@
 export const firm = {
-  name: "Plan og Ressurs AS",
-  shortName: "Plan og Ressurs",
-  orgNumber: "992293160",
-  url: "https://www.planogressurs.no",
-  email: "post@planogressurs.no",
-  leaderEmail: "joar@planogressurs.no",
-  invoiceEmail: "faktura@planogressurs.no",
-  phone: "+47 452 05 513",
-  phoneHref: "tel:+4745205513",
-  street: "Nymoens torg 6",
-  place: "Quben",
-  postalCode: "3611",
-  city: "Kongsberg",
+  name: "Terrengstudio",
+  shortName: "Terrengstudio",
+  orgNumber: "",
+  url: "https://stjernestudio.no",
+  email: "post@terrengstudio.example",
+  leaderEmail: "post@terrengstudio.example",
+  invoiceEmail: "post@terrengstudio.example",
+  phone: "",
+  phoneHref: "/kontakt",
+  street: "",
+  place: "",
+  postalCode: "",
+  city: "Østlandet",
   hours: "Man–fre 08–16",
   map: {
-    lat: 59.670876,
-    lng: 9.646838,
+    lat: 0,
+    lng: 0,
   },
   founded: 2008,
   leader: {
-    name: "Joar-André Halling",
+    name: "Terrengstudio",
     title: "Landskapsarkitekt MNLA og daglig leder",
     portrait: {
       src: "/media/c0eb334f7f7241f483683f78624f9453.jpg",
       width: 1674,
       height: 1800,
-      alt: "Joar-André Halling, daglig leder i Plan og Ressurs",
+      alt: "",
     },
-    linkedin: "https://www.linkedin.com/in/joar-andre-halling-42439a397",
+    linkedin: "",
   },
   logo: {
     src: "/media/logo.png",
     width: 512,
     height: 379,
-    alt: "Plan og Ressurs",
+    alt: "Terrengstudio",
   },
   approvalMark: {
     src: "/media/5d6d48046f8d4170a2855bd2d57e3ff9.png",
@@ -73,38 +73,7 @@ export const method = [
   },
 ] as const
 
-export const clients = [
-  {
-    name: "Ålhytta",
-    src: "/media/clients/aalhytta-white.png",
-    width: 1340,
-    height: 172,
-  },
-  {
-    name: "Ag",
-    src: "/media/clients/ag.png",
-    width: 242,
-    height: 176,
-  },
-  {
-    name: "Dekar Tomteutvikling",
-    src: "/media/clients/dekar.png",
-    width: 500,
-    height: 129,
-  },
-  {
-    name: "PK Hus",
-    src: "/media/clients/pk-hus.png",
-    width: 1546,
-    height: 1309,
-  },
-  {
-    name: "Samarbeidspartner",
-    src: "/media/clients/samarbeidspartner.png",
-    width: 252,
-    height: 228,
-  },
-] as const
+export const clients: { name: string; src: string; width: number; height: number }[] = []
 
 export const inquiryTypes = [
   "Arealplanlegging",

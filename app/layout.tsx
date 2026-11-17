@@ -25,13 +25,13 @@ const fontMono = Geist_Mono({
 })
 
 const description =
-  "Plan og Ressurs AS er et rådgivningskontor på Quben i Kongsberg. Vi arbeider med arealplanlegging, landskapsarkitektur og eiendomsutvikling, fra idé til vedtak."
+  "Terrengstudio er et rådgivningskontor for areal og landskap. Vi arbeider med arealplanlegging, landskapsarkitektur og eiendomsutvikling, fra idé til vedtak."
 
 export const metadata: Metadata = {
   metadataBase: new URL(firm.url),
   title: {
-    default: "Plan og Ressurs — arealplanlegging og landskapsarkitektur",
-    template: "%s · Plan og Ressurs",
+    default: "Terrengstudio — arealplanlegging og landskapsarkitektur",
+    template: "%s · Terrengstudio",
   },
   description,
   applicationName: firm.shortName,
@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nb_NO",
     siteName: firm.shortName,
-    title: "Plan og Ressurs — arealplanlegging og landskapsarkitektur",
+    title: "Terrengstudio — arealplanlegging og landskapsarkitektur",
     description,
     images: [
       {
         url: "/media/hero-gluggelokka.jpg",
         width: 2904,
         height: 1440,
-        alt: "Gatemiljø med småhus og gangveier på Gluggeløkka",
+        alt: "Gatemiljø med småhus og gangveier i Henrik Ibsens gate, Kongsberg",
       },
     ],
   },
@@ -57,8 +57,8 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: firm.name,
   url: firm.url,
-  image: `${firm.url}${firm.logo.src}`,
-  telephone: "+4745205513",
+  image: `${firm.url}/media/hero-gluggelokka.jpg`,
+  
   email: firm.email,
   address: {
     "@type": "PostalAddress",
@@ -70,7 +70,7 @@ const jsonLd = {
   areaServed: "NO",
   openingHours: "Mo-Fr 08:00-16:00",
   inLanguage: "nb-NO",
-  sameAs: [firm.leader.linkedin],
+  
 }
 
 export default function RootLayout({
@@ -96,6 +96,7 @@ export default function RootLayout({
           </a>
           <SiteShell>{children}</SiteShell>
           <SiteFooter />
+          <a href="https://stjernestudio.no/referanser" target="_top" style={{position:'fixed',zIndex:80,left:16,bottom:16,background:'#111216',color:'#fff',padding:'10px 14px',borderRadius:999,fontSize:13,textDecoration:'none'}}>← Studio</a>
         </ThemeProvider>
       </body>
     </html>
