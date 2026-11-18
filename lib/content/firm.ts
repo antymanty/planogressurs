@@ -4,6 +4,7 @@ export const firm = {
   orgNumber: "992 293 160",
   url: "https://www.planogressurs.no",
   email: "post@planogressurs.no",
+  formEmail: "kontakt@planogressurs.no",
   leaderEmail: "joar@planogressurs.no",
   invoiceEmail: "faktura@planogressurs.no",
   phone: "452 05 513",

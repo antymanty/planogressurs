@@ -45,7 +45,7 @@ export async function sendContact(
   }
 
   const inquiry = parsed.inquiry
-  const from = process.env.RESEND_FROM || `Plan og Ressurs <${firm.email}>`
+  const from = process.env.RESEND_FROM || `Plan og Ressurs <${firm.formEmail}>`
   const to = process.env.CONTACT_TO_EMAIL || firm.email
   const notice = renderInquiryEmail(inquiry)
   const resend = new Resend(apiKey)
