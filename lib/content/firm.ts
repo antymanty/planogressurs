@@ -28,7 +28,7 @@ export const firm = {
       height: 1800,
       alt: "Joar-André Halling, daglig leder i Plan og Ressurs AS",
     },
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/joar-andre-halling-42439a397",
   },
   logo: {
     src: "/media/logo.png",
