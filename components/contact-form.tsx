@@ -1,6 +1,7 @@
 "use client"
 
 import {
+  startTransition,
   useActionState,
   useEffect,
   useRef,
@@ -21,12 +22,24 @@ export function ContactForm() {
     initialContactState
   )
   const [error, setError] = useState("")
+  const [closedRevision, setClosedRevision] = useState(0)
   const formRef = useRef<HTMLFormElement>(null)
+  const statusRef = useRef<HTMLDivElement>(null)
+  const serverError = !pending && !state.sent ? state.error : ""
+  const visibleError = error || serverError
+  const showSent =
+    !pending && state.sent && !visibleError && state.revision !== closedRevision
 
   useEffect(() => {
     if (state.revision === 0) return
     formRef.current?.reset()
   }, [state.revision])
+
+  useEffect(() => {
+    if (!showSent) return
+    statusRef.current?.scrollIntoView({ block: "nearest" })
+    statusRef.current?.focus()
+  }, [showSent])
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -37,16 +50,45 @@ export function ContactForm() {
       return
     }
     setError("")
-    formAction(formData)
+    startTransition(() => {
+      formAction(formData)
+    })
   }
 
-  const serverError = !pending && !state.sent ? state.error : ""
-  const visibleError = error || serverError
+  if (showSent) {
+    return (
+      <div
+        ref={statusRef}
+        tabIndex={-1}
+        role="status"
+        aria-live="polite"
+        className="border border-foreground/15 border-t-4 border-t-lime bg-background px-5 py-6 outline-none"
+      >
+        <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">
+          Sendt
+        </p>
+        <h3 className="mt-3 text-3xl">Henvendelsen er sendt</h3>
+        <p className="mt-3 leading-relaxed text-muted-foreground">
+          Takk. Meldingen er sendt til {firm.email}. Vi svarer til
+          e-postadressen du oppga.
+          {state.receipt ? " En bekreftelse er sendt til samme adresse." : ""}
+        </p>
+        <div className="mt-6">
+          <button
+            type="button"
+            className={buttonVariants({ variant: "outline" })}
+            onClick={() => setClosedRevision(state.revision)}
+          >
+            Skriv en ny henvendelse
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <form
       ref={formRef}
-      action={formAction}
       onSubmit={onSubmit}
       noValidate
       className="relative space-y-4"
@@ -128,14 +170,6 @@ export function ContactForm() {
       {visibleError ? (
         <p role="alert" className="text-sm text-destructive">
           {visibleError}
-        </p>
-      ) : null}
-      {!pending && state.sent && !visibleError ? (
-        <p role="status" className="text-sm text-foreground">
-          Takk. Henvendelsen er sendt til {firm.email}.
-          {state.receipt
-            ? " En bekreftelse er sendt til e-postadressen du oppga. Vi svarer dit."
-            : " Vi svarer til e-postadressen du oppga."}
         </p>
       ) : null}
       <button type="submit" disabled={pending} className={buttonVariants()}>
