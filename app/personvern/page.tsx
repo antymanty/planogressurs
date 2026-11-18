@@ -117,9 +117,9 @@ export default function PrivacyPage() {
           Vi deler ikke personopplysninger med tredjeparter, med mindre det er
           nødvendig for å levere våre tjenester (for eksempel IT-leverandør
           eller webhotell) eller vi er rettslig forpliktet. Kontaktskjemaet
-          sendes som e-post til oss via Resend, og du får en bekreftelse til
-          adressen du oppga. Opplysningene lagres i vår e-post, ikke i et eget
-          skjemasystem på nettsiden.
+          sendes som e-post til oss. Du får en bekreftelse til adressen du
+          oppga. Opplysningene lagres i vår e-post, ikke i et eget skjemasystem
+          på nettsiden.
         </p>
       </LegalSection>
 

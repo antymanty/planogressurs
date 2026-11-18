@@ -1,8 +1,8 @@
 "use server"
 
 import { headers } from "next/headers"
-import { Resend } from "resend"
 
+import { brevoConfigured, sendBrevoMail } from "@/lib/brevo-mail"
 import { renderInquiryEmail, renderReceiptEmail } from "@/lib/contact-email"
 import { firm } from "@/lib/content/firm"
 import { parseInquiry, type ContactFormState } from "@/lib/contact-inquiry"
@@ -23,17 +23,6 @@ export async function sendContact(
   if (!parsed.ok)
     return { sent: false, error: parsed.error, revision: 0, receipt: false }
 
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    console.error("[contact] RESEND_API_KEY is not set")
-    return {
-      sent: false,
-      error: `Vi fikk ikke sendt henvendelsen. Send e-post direkte til ${firm.email}.`,
-      revision: 0,
-      receipt: false,
-    }
-  }
-
   const ip = await clientIp()
   if (isRateLimited(ip)) {
     return {
@@ -45,37 +34,30 @@ export async function sendContact(
   }
 
   const inquiry = parsed.inquiry
-  const from = process.env.RESEND_FROM || `Plan og Ressurs <${firm.formEmail}>`
-  const to = process.env.CONTACT_TO_EMAIL || firm.email
+  const from = process.env.BREVO_FROM || `Plan og Ressurs <${firm.formEmail}>`
+  const to = process.env.CONTACT_TO_EMAIL || firm.leaderEmail
   const notice = renderInquiryEmail(inquiry)
-  const resend = new Resend(apiKey)
+
+  if (!brevoConfigured()) {
+    console.error("[contact] Brevo is not configured")
+    return {
+      sent: false,
+      error: `Vi fikk ikke sendt henvendelsen. Send e-post direkte til ${firm.email}.`,
+      revision: 0,
+      receipt: false,
+    }
+  }
 
   try {
-    const { error } = await resend.emails.send({
+    await sendBrevoMail({
       from,
-      to: [to],
+      to,
       replyTo: inquiry.email,
-      subject: notice.subject,
-      html: notice.html,
-      text: notice.text,
+      mail: notice,
     })
-
-    if (error) {
-      console.error(
-        "[contact] Resend rejected the message",
-        error.name,
-        error.message
-      )
-      return {
-        sent: false,
-        error: `Vi fikk ikke sendt henvendelsen. Prøv igjen, eller send e-post direkte til ${firm.email}.`,
-        revision: 0,
-        receipt: false,
-      }
-    }
   } catch (error) {
     console.error(
-      "[contact] Resend request failed",
+      "[contact] Inquiry mail failed",
       error instanceof Error ? error.message : "unknown"
     )
     return {
@@ -89,23 +71,13 @@ export async function sendContact(
   const receipt = renderReceiptEmail(inquiry)
   let receiptSent = false
   try {
-    const { error } = await resend.emails.send({
+    await sendBrevoMail({
       from,
-      to: [inquiry.email],
+      to: inquiry.email,
       replyTo: firm.email,
-      subject: receipt.subject,
-      html: receipt.html,
-      text: receipt.text,
+      mail: receipt,
     })
-    if (error) {
-      console.error(
-        "[contact] Resend rejected the receipt",
-        error.name,
-        error.message
-      )
-    } else {
-      receiptSent = true
-    }
+    receiptSent = true
   } catch (error) {
     console.error(
       "[contact] Receipt request failed",
