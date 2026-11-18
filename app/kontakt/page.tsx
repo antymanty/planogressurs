@@ -65,7 +65,7 @@ export default function ContactPage() {
       <div className="border border-foreground/15 bg-card p-6 md:p-8">
         <h2 className="text-3xl">Skriv til oss</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Skjemaet åpner en ferdig e-post til {firm.email}.
+          Skjemaet sendes til {firm.email}. Vi svarer på e-postadressen du oppgir.
         </p>
         <div className="mt-6">
           <ContactForm />

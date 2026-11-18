@@ -6,10 +6,12 @@ import { legal, legalNav } from "@/lib/content/legal"
 export function LegalPage({
   kicker,
   title,
+  updated = legal.updated,
   children,
 }: {
   kicker: string
   title: string
+  updated?: string
   children: ReactNode
 }) {
   return (
@@ -17,7 +19,7 @@ export function LegalPage({
       <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">{kicker}</p>
       <h1 className="mt-3 text-5xl md:text-6xl">{title}</h1>
       <p className="mt-4 text-sm text-muted-foreground">
-        Sist oppdatert: {legal.updated} · {legal.controller}, org.nr. {legal.orgNumber}
+        Sist oppdatert: {updated} · {legal.controller}, org.nr. {legal.orgNumber}
       </p>
       <nav aria-label="Juridiske sider" className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold tracking-[0.14em] uppercase">
         {legalNav.map((item) => (

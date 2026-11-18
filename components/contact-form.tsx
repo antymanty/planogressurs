@@ -1,68 +1,64 @@
 "use client"
 
-import { useState } from "react"
+import {
+  useActionState,
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+} from "react"
 
 import Link from "next/link"
 
+import { sendContact } from "@/app/kontakt/actions"
 import { buttonVariants } from "@/components/ui/button"
 import { firm, inquiryTypes } from "@/lib/content/firm"
-
-type Status = "idle" | "error" | "ready"
+import { initialContactState, parseInquiry } from "@/lib/contact-inquiry"
 
 export function ContactForm() {
-  const [status, setStatus] = useState<Status>("idle")
+  const [state, formAction, pending] = useActionState(
+    sendContact,
+    initialContactState
+  )
   const [error, setError] = useState("")
+  const formRef = useRef<HTMLFormElement>(null)
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    if (state.revision === 0) return
+    formRef.current?.reset()
+  }, [state.revision])
+
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const data = new FormData(event.currentTarget)
-    const name = String(data.get("navn") ?? "").trim()
-    const email = String(data.get("epost") ?? "").trim()
-    const phone = String(data.get("telefon") ?? "").trim()
-    const kind = String(data.get("type") ?? "").trim()
-    const message = String(data.get("melding") ?? "").trim()
-    const consent = data.get("samtykke") === "on"
-
-    if (name.length < 2) {
-      setStatus("error")
-      setError("Skriv inn navnet ditt.")
+    const formData = new FormData(event.currentTarget)
+    const parsed = parseInquiry(formData)
+    if (!parsed.ok) {
+      setError(parsed.error)
       return
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setStatus("error")
-      setError("Skriv inn en gyldig e-postadresse.")
-      return
-    }
-    if (!kind) {
-      setStatus("error")
-      setError("Velg type oppdrag.")
-      return
-    }
-    if (message.length < 10) {
-      setStatus("error")
-      setError("Skriv en kort melding om oppdraget.")
-      return
-    }
-    if (!consent) {
-      setStatus("error")
-      setError("Bekreft at vi kan bruke opplysningene til å besvare henvendelsen.")
-      return
-    }
-
-    const subject = `Henvendelse fra ${name}: ${kind}`
-    const body = [`Navn: ${name}`, `E-post: ${email}`, phone ? `Telefon: ${phone}` : "", `Type: ${kind}`, "", message]
-      .filter(Boolean)
-      .join("\n")
-
-    setStatus("ready")
     setError("")
-    window.location.href = `mailto:${firm.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    formAction(formData)
   }
 
+  const serverError = !pending && !state.sent ? state.error : ""
+  const visibleError = error || serverError
+
   return (
-    <form method="post" action="/kontakt" onSubmit={onSubmit} noValidate className="space-y-4">
+    <form
+      ref={formRef}
+      action={formAction}
+      onSubmit={onSubmit}
+      noValidate
+      className="relative space-y-4"
+    >
       <Field label="Navn" name="navn" autoComplete="name" required />
-      <Field label="E-post" name="epost" type="email" autoComplete="email" required />
+      <Field
+        label="E-post"
+        name="epost"
+        type="email"
+        autoComplete="email"
+        required
+      />
       <Field label="Telefon" name="telefon" type="tel" autoComplete="tel" />
       <div className="space-y-1.5">
         <label htmlFor="type" className="text-sm font-medium">
@@ -97,6 +93,19 @@ export function ContactForm() {
           className="w-full border border-input bg-background px-3 py-2 text-sm"
         />
       </div>
+      <div
+        className="absolute top-auto -left-[10000px] h-px w-px overflow-hidden"
+        aria-hidden="true"
+      >
+        <label htmlFor="firma_nettsted">Ikke fyll ut dette feltet</label>
+        <input
+          id="firma_nettsted"
+          name="firma_nettsted"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
         <input
           type="checkbox"
@@ -105,26 +114,32 @@ export function ContactForm() {
           className="mt-1 size-4 shrink-0 border border-input accent-foreground"
         />
         <span>
-          Jeg samtykker til at opplysningene brukes til å besvare henvendelsen. Se{" "}
-          <Link href="/personvern" className="text-foreground underline decoration-lime decoration-2 underline-offset-4">
+          Jeg samtykker til at opplysningene brukes til å besvare henvendelsen.
+          Se{" "}
+          <Link
+            href="/personvern"
+            className="text-foreground underline decoration-lime decoration-2 underline-offset-4"
+          >
             personvernerklæringen
           </Link>
           .
         </span>
       </label>
-      {status === "error" ? (
+      {visibleError ? (
         <p role="alert" className="text-sm text-destructive">
-          {error}
+          {visibleError}
         </p>
       ) : null}
-      {status === "ready" ? (
+      {!pending && state.sent && !visibleError ? (
         <p role="status" className="text-sm text-foreground">
-          E-postprogrammet åpnes med en ferdig melding til {firm.email}. Hvis det ikke skjer, kan du sende direkte til
-          samme adresse.
+          Takk. Henvendelsen er sendt til {firm.email}.
+          {state.receipt
+            ? " En bekreftelse er sendt til e-postadressen du oppga. Vi svarer dit."
+            : " Vi svarer til e-postadressen du oppga."}
         </p>
       ) : null}
-      <button type="submit" className={buttonVariants()}>
-        Send henvendelse
+      <button type="submit" disabled={pending} className={buttonVariants()}>
+        {pending ? "Sender…" : "Send henvendelse"}
       </button>
     </form>
   )
