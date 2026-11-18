@@ -9,7 +9,7 @@ export function SiteFooter() {
     <footer className="border-t-2 border-lime bg-ink text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="text-2xl tracking-tight text-white">{firm.shortName}</p>
+          <p className="text-2xl tracking-tight text-white">{firm.name}</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70">
             Arealplanlegging, landskapsarkitektur og eiendomsutvikling.
           </p>

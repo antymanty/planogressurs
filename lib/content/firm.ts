@@ -1,6 +1,6 @@
 export const firm = {
   name: "Plan og Ressurs AS",
-  shortName: "Plan og Ressurs AS",
+  shortName: "Plan og Ressurs",
   orgNumber: "992 293 160",
   url: "https://www.planogressurs.no",
   email: "post@planogressurs.no",

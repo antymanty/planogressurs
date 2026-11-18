@@ -32,14 +32,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(firm.url),
   title: {
     default: "Plan og Ressurs AS — arealplanlegging og landskapsarkitektur",
-    template: `%s · ${firm.shortName}`,
+    template: `%s · ${firm.name}`,
   },
   description,
-  applicationName: firm.shortName,
+  applicationName: firm.name,
   openGraph: {
     type: "website",
     locale: "nb_NO",
-    siteName: firm.shortName,
+    siteName: firm.name,
     title: "Plan og Ressurs AS — arealplanlegging og landskapsarkitektur",
     description,
     images: [

@@ -16,7 +16,7 @@ export default function AboutPage() {
       <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
           <p className="text-xs font-semibold tracking-[0.16em] text-lime uppercase">Om kontoret</p>
-          <h1 className="mt-3 text-5xl md:text-6xl">{firm.shortName}</h1>
+          <h1 className="mt-3 text-5xl md:text-6xl">{firm.name}</h1>
           <p className="mt-3 text-lg text-muted-foreground">
             {firm.leader.name}, {firm.leader.title}
           </p>
