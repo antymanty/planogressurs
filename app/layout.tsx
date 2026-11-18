@@ -31,7 +31,7 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL(firm.url),
   title: {
-    default: "Plan og Ressurs — arealplanlegging og landskapsarkitektur",
+    default: "Plan og Ressurs AS — arealplanlegging og landskapsarkitektur",
     template: `%s · ${firm.shortName}`,
   },
   description,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nb_NO",
     siteName: firm.shortName,
-    title: "Plan og Ressurs — arealplanlegging og landskapsarkitektur",
+    title: "Plan og Ressurs AS — arealplanlegging og landskapsarkitektur",
     description,
     images: [
       {

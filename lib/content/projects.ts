@@ -50,7 +50,7 @@ export const projects: Project[] = [
     summary:
       "Detaljering av deler av sentrumsgaten og arealet foran kommunehuset, med sitteplasser, trapp og beplantning.",
     body: [
-      "Plan og Ressurs har bistått Nore og Uvdal kommune med å detaljere deler av sentrumsgaten og området foran kommunehuset.",
+      "Plan og Ressurs AS har bistått Nore og Uvdal kommune med å detaljere deler av sentrumsgaten og området foran kommunehuset.",
       "Material- og plantebeskrivelse er vektlagt. Utearealet har fått integrerte sitteplasser, trapp og soner med beplantning.",
     ],
     images: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     summary:
       "Prosjektering av uteareal, veg og parkering for Modum kommunes største barnehage, med innledende regulering.",
     body: [
-      "Plan og Ressurs har prosjektert utearealene i Modum kommunes største barnehage, inkludert veg- og parkeringsarealer. Lokalisering av bygningen ble funnet i samråd med arkitekt.",
+      "Plan og Ressurs AS har prosjektert utearealene i Modum kommunes største barnehage, inkludert veg- og parkeringsarealer. Lokalisering av bygningen ble funnet i samråd med arkitekt.",
       "I prosjektet inngår også en innledende detaljregulering med konsekvensutredning, inkludert planlegging av 15 eneboligtomter.",
     ],
     images: [
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     summary: "Nye leke- og uteoppholdsarealer, med sittegrupper og pergola.",
     body: [
       "Arbeidet har bestått av detaljprosjektering av nye leke- og uteoppholdsarealer.",
-      "Plan og Ressurs hadde også ansvaret for nye soner for sittegrupper og pergola med takoverbygg.",
+      "Plan og Ressurs AS hadde også ansvaret for nye soner for sittegrupper og pergola med takoverbygg.",
     ],
     images: [
       img("32113f7dc82248258fcf7fac8bba982f.png", "Rødberg skole", 601, 847),
@@ -384,7 +384,7 @@ export const projects: Project[] = [
     summary: "Utvidelse for næring, tjenesteyting, industri og lager, med prosjektering senere i løpet.",
     body: [
       "Formålet var å legge til rette for utbygging med næring og tjenesteyting, og industri og lager. Planen er en utvidelse av eksisterende reguleringsplan.",
-      "Plan og Ressurs har også bistått med detaljprosjektering og søknader senere i prosessen.",
+      "Plan og Ressurs AS har også bistått med detaljprosjektering og søknader senere i prosessen.",
     ],
     images: [
       img(
@@ -465,7 +465,7 @@ export const projects: Project[] = [
     body: [
       "Området vest for Stalsberg skole på Geithus ble regulert til blant annet frittliggende småhusbebyggelse, offentlig og privat tjenesteyting for barnehage, og veganlegg.",
       "De viktigste oppgavene var lokalisering av barnehagen og infrastrukturen: hvor atkomstvegene skulle ligge, og hvilke konsekvenser det fikk for området. Det ble også vurdert om gang- og sykkelveg skulle knytte fremtidig barnehage og Stalsberg skole sammen.",
-      "Oppdraget var en del av prosjekteringen av Skredsvikmoen barnehage, der Plan og Ressurs også var ansvarlig for lek- og utomhusarealer, parkering og veganlegg.",
+      "Oppdraget var en del av prosjekteringen av Skredsvikmoen barnehage, der Plan og Ressurs AS også var ansvarlig for lek- og utomhusarealer, parkering og veganlegg.",
     ],
     images: [
       img("9cf44ef571c64b4c86f9c53699a708ee.png", "Skredsvikmoen, Geithus", 1040, 808),
@@ -505,7 +505,7 @@ export const projects: Project[] = [
     summary:
       "Digitalisering av reguleringsplan for hytter, skianlegg og næring, og 3D-modell av terreng og løype.",
     body: [
-      "Plan og Ressurs har bistått med digitalisering av detaljreguleringsplanen, som omfatter hytter, skianlegg og næring.",
+      "Plan og Ressurs AS har bistått med digitalisering av detaljreguleringsplanen, som omfatter hytter, skianlegg og næring.",
       "Vi har også detaljprosjektert terreng og skianlegg som en 3D-modell, egnet til maskinstyring i anleggsfasen. Anlegget er asfaltert og kan brukes som rulleskiløype om sommeren. Det er en del av utviklingen av Vegglifjell som hytte-, turist- og rekreasjonsområde.",
     ],
     images: [
@@ -526,7 +526,7 @@ export const projects: Project[] = [
     summary:
       "Overtakelse av kommunedelplanen midt i løpet, med kart, innspill, innsigelser og konsekvensutredning.",
     body: [
-      "Plan og Ressurs overtok arbeidet fra en annen plankonsulent midt i prosessen. På grunn av en rekke innsigelser fra myndighetene ble planforslaget revidert flere ganger.",
+      "Plan og Ressurs AS overtok arbeidet fra en annen plankonsulent midt i prosessen. På grunn av en rekke innsigelser fra myndighetene ble planforslaget revidert flere ganger.",
       "Bistanden omfattet kartarbeid, digitalisering, vurdering og sortering av innspill, konsekvensutredninger og det øvrige konsulentarbeidet frem til ferdig kommunedelplan.",
     ],
     images: [
@@ -546,7 +546,7 @@ export const projects: Project[] = [
     summary:
       "Hageplaner fra skisse til ferdig plan, også med mur, trapp, overvann og 3D-visualisering.",
     body: [
-      "Plan og Ressurs har laget en rekke utomhus- og hageplaner, og bistått med hagedesign for mange kunder. Noen oppdrag er mer tekniske, for eksempel overvannstiltak eller prosjektering av mur og trapp.",
+      "Plan og Ressurs AS har laget en rekke utomhus- og hageplaner, og bistått med hagedesign for mange kunder. Noen oppdrag er mer tekniske, for eksempel overvannstiltak eller prosjektering av mur og trapp.",
       "Arbeidet bygger på fagkunnskap om planter og arkitektur, og skal styrke eiendommens verdi med varig kvalitet. Visualisering i 3D brukes for at kunden skal forstå prosjektet. Landskapsarkitekten har i tillegg en særlig interesse for historiske og kulturelle hager, anlegg og parker.",
     ],
     images: [
